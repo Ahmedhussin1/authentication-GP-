@@ -7,7 +7,7 @@ function Problems() {
 	const path = location.pathname.split('/')[2]
 	const post = posts.find((p) => p.id.toString() === path)
 	return (
-		<div className="overflow-auto rounded-lg shadow container mx-auto max-w-7xl">
+		<div className="overflow-auto rounded-lg shadow container mx-auto max-w-7xl mt-10">
 			<table className="w-full">
 				<thead className="bg-gray-50 border-b-2 border-gray-200">
 					<tr>

@@ -10,7 +10,7 @@ import Login from './pages/Login'
 import Profile from './pages/Profile'
 import About from './pages/About'
 import pb from './lib/pocketbase'
-
+import PrivateRoute from './PrivateRouters/PrivateRoute'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -19,8 +19,15 @@ const router = createBrowserRouter(
 			<Route path="contests" element={<Contests />} />
 			<Route path="sign-up" element={<SignUp />} />
 			<Route path="Login" element={<Login />} />
-			<Route path="profile" element={<Profile />} />
-      		<Route path='about' element={<About/>} />
+			<Route
+				path="/profile"
+				element={
+					<PrivateRoute>
+						<Profile />
+					</PrivateRoute>
+				}
+			/>
+			<Route path="about" element={<About />} />
 			<Route path="/problems/:id" element={<Problems />} />
 			<Route path="/statement/:id" element={<ProblemStatement />} />
 		</Route>,
